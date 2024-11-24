@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="nav-bar">
         <div class="nav-container">
             <button class="nav-item active" data-page="home">
@@ -39,18 +39,26 @@
         <section id="home-page" class="page active">
             <div class="stories-container">
                 <div class="story-list">
-                    <!-- Stories dynamically added -->
+                    <div class="story">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User Story">
+                        <span>emma_22</span>
+                    </div>
+                    <div class="story">
+                        <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User Story">
+                        <span>alex_dev</span>
+                    </div>
+                    <!-- More stories... -->
                 </div>
             </div>
             <div class="posts-container">
-                <!-- Posts dynamically added -->
+                <!-- Sample posts will be added by JavaScript -->
             </div>
         </section>
 
         <!-- Explore Page -->
         <section id="explore-page" class="page">
             <div class="explore-grid">
-                <!-- Explore items dynamically added -->
+                <!-- Explore items will be added by JavaScript -->
             </div>
         </section>
 
@@ -59,7 +67,15 @@
             <div class="messages-container">
                 <h2>Messages</h2>
                 <div class="messages-list">
-                    <!-- Messages dynamically added -->
+                    <div class="message-item">
+                        <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User">
+                        <div class="message-content">
+                            <h4>Sarah Parker</h4>
+                            <p>Hey, how are you doing?</p>
+                        </div>
+                        <span class="message-time">2m ago</span>
+                    </div>
+                    <!-- More messages... -->
                 </div>
             </div>
         </section>
@@ -69,7 +85,7 @@
             <div class="profile-container">
                 <div class="profile-header">
                     <div class="profile-avatar">
-                        <img src="https://via.placeholder.com/150" alt="Profile">
+                        <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Profile">
                     </div>
                     <h2>John Doe</h2>
                     <p class="profile-bio">Digital Creator & Developer</p>
@@ -89,6 +105,9 @@
                     </div>
                 </div>
                 <button class="edit-profile-btn">Edit Profile</button>
+                <div class="profile-grid">
+                    <!-- Profile posts will be added by JavaScript -->
+                </div>
             </div>
         </section>
     </main>
@@ -104,10 +123,19 @@
                     <i class="fas fa-image"></i>
                     Choose Image
                 </label>
+                <div id="upload-preview" class="hidden">
+                    <img id="preview-image" src="" alt="Preview">
+                </div>
             </div>
             <textarea placeholder="Write a caption..."></textarea>
             <button class="post-btn">Share Post</button>
         </div>
+    </div>
+
+    <!-- Upload Success Toast -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Post uploaded successfully!</span>
     </div>
 
     <!-- Floating Action Button -->
