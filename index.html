@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,26 +8,26 @@ html
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="nav-bar">
         <div class="nav-container">
-            <button class="nav-item active" data-page="home">
+            <button class="nav-item active" data-page="home" aria-label="Home">
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </button>
-            <button class="nav-item" data-page="explore">
+            <button class="nav-item" data-page="explore" aria-label="Explore">
                 <i class="fas fa-compass"></i>
                 <span>Explore</span>
             </button>
-            <button class="nav-item" data-page="messages">
+            <button class="nav-item" data-page="messages" aria-label="Messages">
                 <i class="fas fa-comment"></i>
                 <span>Messages</span>
             </button>
-            <button class="nav-item" data-page="profile">
+            <button class="nav-item" data-page="profile" aria-label="Profile">
                 <i class="fas fa-user"></i>
                 <span>Profile</span>
             </button>
-            <button id="theme-toggle">
+            <button id="theme-toggle" aria-label="Toggle Theme">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
@@ -38,23 +37,28 @@ html
     <main>
         <!-- Home Page -->
         <section id="home-page" class="page active">
-            <!-- Stories -->
             <div class="stories-container">
                 <div class="story-list">
-                    <!-- Stories will be added by JavaScript -->
+                    <div class="story">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="emma_22's Story">
+                        <span>emma_22</span>
+                    </div>
+                    <div class="story">
+                        <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="alex_dev's Story">
+                        <span>alex_dev</span>
+                    </div>
+                    <!-- Add more stories dynamically -->
                 </div>
             </div>
-
-            <!-- Posts -->
             <div class="posts-container">
-                <!-- Posts will be added by JavaScript -->
+                <!-- Sample posts will be added by JavaScript -->
             </div>
         </section>
 
         <!-- Explore Page -->
         <section id="explore-page" class="page">
             <div class="explore-grid">
-                <!-- Explore items will be added by JavaScript -->
+                <!-- Explore items will be dynamically generated -->
             </div>
         </section>
 
@@ -63,7 +67,15 @@ html
             <div class="messages-container">
                 <h2>Messages</h2>
                 <div class="messages-list">
-                    <!-- Messages will be added by JavaScript -->
+                    <div class="message-item">
+                        <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Sarah Parker">
+                        <div class="message-content">
+                            <h4>Sarah Parker</h4>
+                            <p>Hey, how are you doing?</p>
+                        </div>
+                        <span class="message-time">2m ago</span>
+                    </div>
+                    <!-- Add more messages dynamically -->
                 </div>
             </div>
         </section>
@@ -73,7 +85,7 @@ html
             <div class="profile-container">
                 <div class="profile-header">
                     <div class="profile-avatar">
-                        <img src="https://via.placeholder.com/150" alt="Profile">
+                        <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="John Doe's Profile Picture">
                     </div>
                     <h2>John Doe</h2>
                     <p class="profile-bio">Digital Creator & Developer</p>
@@ -93,6 +105,9 @@ html
                     </div>
                 </div>
                 <button class="edit-profile-btn">Edit Profile</button>
+                <div class="profile-grid">
+                    <!-- Profile posts will be added dynamically -->
+                </div>
             </div>
         </section>
     </main>
@@ -100,24 +115,37 @@ html
     <!-- Create Post Modal -->
     <div id="create-post-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" aria-label="Close Modal">&times;</span>
             <h2>Create New Post</h2>
             <div class="upload-container">
                 <input type="file" id="post-image" accept="image/*">
-                <label for="post-image" class="upload-btn">
+                <label for="post-image" class="upload-btn" aria-label="Choose Image">
                     <i class="fas fa-image"></i>
                     Choose Image
                 </label>
+                <div id="upload-preview" class="hidden">
+                    <img id="preview-image" src="" alt="Preview">
+                </div>
             </div>
             <textarea placeholder="Write a caption..."></textarea>
             <button class="post-btn">Share Post</button>
         </div>
     </div>
 
+    <!-- Upload Success Toast -->
+    <div id="toast" class="toast" aria-live="polite">
+        <i class="fas fa-check-circle"></i>
+        <span>Post uploaded successfully!</span>
+    </div>
+
     <!-- Floating Action Button -->
-    <button class="fab" id="create-post-btn">
+    <button class="fab" id="create-post-btn" aria-label="Create Post">
         <i class="fas fa-plus"></i>
     </button>
+
+    <noscript>
+        <p>Please enable JavaScript to use the full functionality of this app.</p>
+    </noscript>
 
     <script src="app.js"></script>
 </body>
