@@ -14,76 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const postsContainer = document.querySelector('.posts-container');
     const exploreGrid = document.querySelector('.explore-grid');
     const profileGrid = document.querySelector('.profile-grid');
-    // Form and input elements
-const form = document.getElementById('signupForm');
-const usernameInput = document.getElementById('username');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
 
-// Error message elements
-const usernameError = document.getElementById('usernameError');
-const emailError = document.getElementById('emailError');
-const passwordError = document.getElementById('passwordError');
-
-// Validation patterns
-const usernamePattern = /^[a-zA-Z0-9]{5,15}$/; // Alphanumeric, 5-15 chars
-const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/; // Valid email pattern
-const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/; // At least 1 uppercase, 1 lowercase, 1 number, min 8 chars
-
-// Username validation
-function validateUsername() {
-    const value = usernameInput.value.trim();
-    if (!usernamePattern.test(value)) {
-        usernameError.textContent = 'Username must be 5-15 alphanumeric characters.';
-        usernameError.style.display = 'block';
-        return false;
-    }
-    usernameError.style.display = 'none';
-    return true;
-}
-
-// Email validation
-function validateEmail() {
-    const value = emailInput.value.trim();
-    if (!emailPattern.test(value)) {
-        emailError.textContent = 'Please enter a valid email address.';
-        emailError.style.display = 'block';
-        return false;
-    }
-    emailError.style.display = 'none';
-    return true;
-}
-
-// Password validation
-function validatePassword() {
-    const value = passwordInput.value.trim();
-    if (!passwordPattern.test(value)) {
-        passwordError.textContent =
-            'Password must have at least 8 characters, including an uppercase letter, a lowercase letter, and a number.';
-        passwordError.style.display = 'block';
-        return false;
-    }
-    passwordError.style.display = 'none';
-    return true;
-}
-
-// Real-time validation
-usernameInput.addEventListener('input', validateUsername);
-emailInput.addEventListener('input', validateEmail);
-passwordInput.addEventListener('input', validatePassword);
-
-// Form submission handling
-form.addEventListener('submit', (event) => {
-    const isUsernameValid = validateUsername();
-    const isEmailValid = validateEmail();
-    const isPasswordValid = validatePassword();
-
-    if (!isUsernameValid || !isEmailValid || !isPasswordValid) {
-        event.preventDefault(); // Prevent submission if validation fails
-    } else {
-        alert('Form submitted successfully!');
-    }
-});
 
 
     // Sample posts data
